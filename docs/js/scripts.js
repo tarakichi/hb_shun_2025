@@ -19,6 +19,6 @@ function message() {
     return "なにもないよ";
 }
 //localStrageのクリア
-function localStrageClear() {
+function localStorageClear() {
     localStorage.clear();
 }
