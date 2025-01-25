@@ -17,8 +17,12 @@
             <h1 class="text-center my-5">Happy Birthday System</h1>
             <div class="form border border-1 p-5">
                 <div class="mb-3 form-element" draggable="true">
-                    <label for="email" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                    <label for="id" class="form-label">ID</label>
+                    <input type="text" class="form-control" id="id" placeholder="ID">
+                </div>
+                <div class="mb-3 form-element" draggable="true">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="text" class="form-control" id="password" placeholder="password">
                 </div>
                 <div class="mb-3 form-element">
                     <label for="comment" class="form-label">Comment</label>
@@ -26,7 +30,7 @@
                 </div>
                 <div class="form-check mb-3 form-element">
                     <input class="form-check-input" type="checkbox" value="" id="check">
-                    <label class="form-check-label" for="check">checkbox</label>
+                    <label class="form-check-label" for="check">Accept all</label>
                 </div>
                 <div class="mb-3 form-element">
                     <label for="color" class="form-label">Color</label>
@@ -34,16 +38,18 @@
                 </div>
                 <hr>
                 <div class="mt-3">
-                    <button type="submit" class="btn btn-primary">Confirm</button>
+                    <button type="submit" class="btn btn-primary" id="submit">Confirm</button>
                 </div>
             </div>
         </form>
+        <button id="resetButton" type="button">フォームをリセット</button>
     </div>
     <script>
         document.getElementById("redirect-form").addEventListener('submit', function(event) {
             event.preventDefault();
             const userInput = [
-                document.getElementById("email").value,
+                document.getElementById("id").value,
+                document.getElementById("password").value,
                 document.getElementById("comment").value,
                 document.getElementById("check").checked,
                 document.getElementById("color").value,
