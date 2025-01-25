@@ -12,6 +12,7 @@ function contentsCheck(userInput) {
 function statusCheck() {
     if(localStorage.getItem("openPage1") == "true") {
         document.getElementById("id").disabled = false;
+        document.getElementById("password").disabled = false;
     }
 }
 //進行状況に応じてメッセージを出力
@@ -21,4 +22,5 @@ function message() {
 //localStrageのクリア
 function localStorageClear() {
     localStorage.clear();
+    window.document.location.href = "";
 }
