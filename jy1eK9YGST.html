@@ -11,8 +11,40 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-    <div class="container">
-        <h1>page3</h1>
+    <div class="container-fluid vh-100">
+        <div class="d-flex flex-column align-items-center justify-content-center my-auto h-100">
+            <h1 class="h3">ID</h1>
+            <p class="text-black-50 p-5 h4 mb-3" id="clue">168</p>
+            <button class="btn btn-outline-secondary mb-3" onclick="clues()">next</button>
+            <div style="display: flex; justify-content: center; align-items: center;">
+                <p class="h4">
+                    <span style="display: inline-block; width: 3rem; height: 3rem; background-color: #008000;"></span>
+                    <span>+</span>
+                    <span style="display: inline-block; width: 3rem; height: 3rem; background-color: #0000ff;"></span>
+                    <span>+</span>
+                    <span style="display: inline-block; width: 3rem; height: 3rem; background-color: #ffff00;"></span>
+                </p>
+            </div>
+            <h1 class="h3">Password</h1>
+            <p class="text-secondary">humour</p>
+            <h1 class="h3">Comment</h1>
+            <p class="text-secondary">Today is a fun day.</p>
+            <a href="./" class="link-primary text-decoration-none mt-5">戻る</a>
+        </div>
     </div>
+    <script>
+        const clue = document.getElementById("clue");
+        const contents = [[168,"#ff0000"], [358,"#008000"], [968,"#ffa500"], [328,"#0000ff"], [777,"#ffff00"]];
+        let currentIndex = 0;
+        document.addEventListener("DOMContentLoaded", () => {
+            window.localStorage.setItem("openPage3", "true");
+            clues();
+        });
+        function clues() {
+            clue.textContent = contents[currentIndex][0];
+            clue.style.background = contents[currentIndex][1];
+            currentIndex = (currentIndex + 1) % contents.length;
+        }
+    </script>
 </body>
 </html>

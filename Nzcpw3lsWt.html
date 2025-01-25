@@ -11,8 +11,19 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-    <div class="container">
-        <h1>page2</h1>
+    <div class="container-fluid vh-100">
+        <div class="d-flex flex-column align-items-center justify-content-center my-auto h-100">
+            <h1 class="h3">ID</h1>
+            <p class="text-secondary">+375820</p>
+            <h1 class="h3">Password</h1>
+            <p class="text-secondary">+al</p>
+            <a href="./" class="link-primary text-decoration-none mt-5">戻る</a>
+        </div>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            window.localStorage.setItem("openPage2", "true");
+        });
+    </script>
 </body>
 </html>

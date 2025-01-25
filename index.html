@@ -47,6 +47,15 @@
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             statusCheck();
+            const inputs = document.querySelectorAll("#id, #password");
+            const guest = document.getElementById("check");
+            inputs.forEach((input) => {
+                input.addEventListener("input", () => {
+                    const isAnyInputFilled = Array.from(inputs).some(input => input.value.trim() !== "");
+                    guest.checked = false;
+                    guest.disabled = isAnyInputFilled;
+                });
+            });
         });
         document.getElementById("redirect-form").addEventListener('submit', function(event) {
             event.preventDefault();
