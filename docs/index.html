@@ -45,6 +45,9 @@
         <button id="resetButton" type="button" onclick="localStorageClear()">clear localStrage</button>
     </div>
     <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            statusCheck();
+        });
         document.getElementById("redirect-form").addEventListener('submit', function(event) {
             event.preventDefault();
             let timerInterval;
@@ -75,7 +78,7 @@
                     contentsCheck(userInput);
                 }
             });
-        })
+        });
     </script>
 </body>
 </html>
