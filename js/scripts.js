@@ -80,6 +80,9 @@ function message() {
     if(localStorage.getItem("openPage6") == "true") {
         return "全ての情報を集めよう";
     }
+    if(localStorage.getItem("openPage7") == "true") {
+        return "全ての情報を集めよう 168...?どこかで見たかもしれない";
+    }
     return "なにもないよ😅";
 }
 //localStrageのクリア
