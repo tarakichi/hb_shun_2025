@@ -77,6 +77,9 @@ function message() {
     if(localStorage.getItem("openPage5") == "true") {
         return "guestにチェックを入れよう ID Password Commentにはなにも書かないよ";
     }
+    if(localStorage.getItem("openPage6") == "true") {
+        return "全ての情報を集めよう";
+    }
     return "なにもないよ😅";
 }
 //localStrageのクリア

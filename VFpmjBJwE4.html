@@ -27,6 +27,7 @@
             let body_element = document.getElementsByTagName("body");
             body_element[0].style.background = color;
             if(color == "#ffffff") {
+                localStorage.setItem("openPage6", "true");
                 let text = document.createElement("p");
                 text.classList.add("text-secondary", "bg-white", "p-1");
                 text.textContent = "slategray, teal, hotpink, darkorchid";
@@ -37,6 +38,7 @@
                 container.prepend(title);
             }
             else if(color == "#708090") { //slategray
+                localStorage.setItem("openPage6", "true");
                 let text = document.createElement("p");
                 text.classList.add("text-secondary", "bg-white", "p-1");
                 text.textContent = "708090";
@@ -47,6 +49,7 @@
                 container.prepend(title);
             }
             else if(color == "#008080") { //teal
+                localStorage.setItem("openPage6", "true");
                 let link = document.createElement("a");
                 link.classList.add("text-primary", "bg-white", "p-1");
                 link.textContent = "https://sites.google.com/view/hb-shun-2025";
@@ -62,6 +65,7 @@
                 container.prepend(title);
             }
             else if(color == "#ff69b4") { //hotpink
+                localStorage.setItem("openPage6", "true");
                 let text = document.createElement("p");
                 text.classList.add("text-secondary", "bg-white", "p-1");
                 text.textContent = "Today is a great day.";
@@ -72,6 +76,7 @@
                 container.prepend(title);
             }
             else if(color == "#9932cc") { //darkorchid
+                localStorage.setItem("openPage6", "true");
                 let text = document.createElement("p");
                 text.classList.add("text-secondary", "bg-white", "p-1");
                 text.textContent = "168";
