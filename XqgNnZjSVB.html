@@ -14,15 +14,66 @@
 <body>
     <div class="container-fluid vh-100">
         <div class="d-flex flex-column align-items-center justify-content-center my-auto h-100">
-            <h1 class="h3">ID</h1>
-            <p class="text-secondary">adf</p>
+            <h1 class="h3">Solve</h1>
+            <p class="text-secondary">作:くに</p>
+            <video controls width="45%" class="mb-3">
+                <source src="/assets/videos/arunashi.mp4">
+            </video>
+            <button class="btn btn-secondary mb-2" onclick="hint()">Hint</button>
+            <p id="times" class="text-secondary mb-4">使用回数:0回</p>
+            <div class="row g-2">
+                <div class="col-auto">
+                    <input id="answer" type="text" class="form-control text-center" placeholder="answer...">
+                </div>
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-primary" onclick="checkAnswer()">Send</button>
+                </div>
+            </div>
             <a href="./" class="link-primary text-decoration-none mt-5">戻る</a>
         </div>
     </div>
     <script>
+        const hints = ["全部カタカナにしてみて", "あるの方には、言葉の中に何か隠されているよ", "ひらがな4文字or漢字2文字", "ほ〇〇〇", "くにに聞こう"];
+        let times = 0;
         document.addEventListener("DOMContentLoaded", () => {
             window.localStorage.setItem("openPage4", "true");
         });
+        function hint() {
+            alert(hints[times % hints.length]);
+            times += 1;
+            document.getElementById("times").textContent = `使用回数:${times}回`;
+        }
+        function checkAnswer() {
+            if(
+                document.getElementById("answer").value == "宝石" || 
+                document.getElementById("answer").value == "ほうせき"
+            ) {
+                Swal.fire({
+                    title: "正解",
+                    icon: "success",
+                    html: 
+                    `
+                    <h1 class="h5">ID</h1>
+                    <p style="opacity: 25%;">none</p>
+                    <h1 class="h5">Password</h1>
+                    <p style="opacity: 25%;">none</p>
+                    <h1 class="h5">Comment</h1>
+                    <p style="opacity: 25%;">none</p>
+                    <img src="/assets/images/guest.png" style="width: 5rem;" class="mb-3">
+                    <h1 class="h5">Color</h1>
+                    <p class="text-body">teal</p>
+                    `
+                })
+            }
+            else {
+                Swal.fire({
+                    title: "不正解",
+                    icon: "error",
+                    html: "ざんねん"
+                })
+            }
+            document.getElementById("answer").value = "";
+        }
     </script>
 </body>
 </html>

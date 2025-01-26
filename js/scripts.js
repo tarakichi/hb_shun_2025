@@ -33,6 +33,14 @@ function contentsCheck(userInput) {
         userInput[4] == "#000000" 
     ) {
         window.document.location.href = "XqgNnZjSVB.html"; //
+    } else if(
+        userInput[0] == "1463" && 
+        userInput[1] == "humour" && 
+        userInput[2] == "Today is a fun day." && 
+        userInput[3] == false &&
+        userInput[4] == "#000000" 
+    ) {
+        window.document.location.href = "XqgNnZjSVB.html"; //
     }
     else {
         window.document.location.href = "blank.html";
@@ -46,6 +54,9 @@ function statusCheck() {
     }
     if(localStorage.getItem("openPage3") == "true") {
         document.getElementById("comment").disabled = false;
+    }
+    if(localStorage.getItem("openPage4") == "true") {
+        document.getElementById("color").disabled = false;
     }
 }
 //進行状況に応じてメッセージを出力
