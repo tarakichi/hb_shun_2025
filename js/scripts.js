@@ -6,6 +6,18 @@ function contentsCheck(userInput) {
         userInput[1] == "" && 
         userInput[2] == "" && 
         userInput[3] == true &&
+        document.getElementById("color").disabled == false
+    ) {
+        let url_string = window.location.href + "VFpmjBJwE4.html";
+        let url = new URL(url_string);
+        url.searchParams.append("color",userInput[4]);
+        window.document.location.href = url.toString(); //色付きのページ
+    }
+    else if(
+        userInput[0] == "" && 
+        userInput[1] == "" && 
+        userInput[2] == "" && 
+        userInput[3] == true &&
         userInput[4] == "#000000" 
     ) {
         window.document.location.href = "AICRJMap6N.html"; //最初のidとpassword
@@ -24,7 +36,7 @@ function contentsCheck(userInput) {
         userInput[3] == false &&
         userInput[4] == "#000000" 
     ) {
-        window.document.location.href = "jy1eK9YGST.html"; //
+        window.document.location.href = "jy1eK9YGST.html"; //動画
     } else if(
         userInput[0] == "1463" && 
         userInput[1] == "humour" && 
@@ -32,15 +44,16 @@ function contentsCheck(userInput) {
         userInput[3] == false &&
         userInput[4] == "#000000" 
     ) {
-        window.document.location.href = "XqgNnZjSVB.html"; //
-    } else if(
-        userInput[0] == "1463" && 
-        userInput[1] == "humour" && 
-        userInput[2] == "Today is a fun day." && 
+        window.document.location.href = "XqgNnZjSVB.html"; //色が変わるページ
+    }
+    else if(
+        userInput[0] == "708090" && 
+        userInput[1] == "felicity" && 
+        userInput[2] == "Today is a great day." && 
         userInput[3] == false &&
-        userInput[4] == "#000000" 
+        userInput[4] == "#ff0000" 
     ) {
-        window.document.location.href = "XqgNnZjSVB.html"; //
+        window.document.location.href = "2QEJHC1QLV.html"; //clear
     }
     else {
         window.document.location.href = "blank.html";
@@ -61,7 +74,10 @@ function statusCheck() {
 }
 //進行状況に応じてメッセージを出力
 function message() {
-    return "なにもないよ";
+    if(localStorage.getItem("openPage5") == "true") {
+        return "guestにチェックを入れよう";
+    }
+    return "なにもないよ😅";
 }
 //localStrageのクリア
 function localStorageClear() {
