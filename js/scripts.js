@@ -75,7 +75,7 @@ function statusCheck() {
 //進行状況に応じてメッセージを出力
 function message() {
     if(localStorage.getItem("openPage5") == "true") {
-        return "guestにチェックを入れよう";
+        return "guestにチェックを入れよう ID Password Commentにはなにも書かないよ";
     }
     return "なにもないよ😅";
 }
